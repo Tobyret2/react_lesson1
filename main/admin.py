@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import Person, PlaceBirth
 
-# Register your models here.
+@admin.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ('name','family_name','age','place_birth')
+
+admin.site.register(PlaceBirth)
