@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import Person from "./components/show";
+import ShowPerson from "./components/person";
+import Form from "./components/form";
 
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
       <div className="App">
-        </div>
+          <Person />
+          <ShowPerson />
+          <Form />
 
+      </div>
     );
   }
 }
 
-export default App;
+export default App;// Экспорт компонента в index.js
