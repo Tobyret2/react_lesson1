@@ -11,6 +11,12 @@ def get_all_person(request):
     all_person_serializer = PersonSerializer(all_person,many=True)
     return Response(all_person_serializer.data)
 
+@api_view()
+def get_country_person(request,country):
+    country_id = PlaceBirth.objects.get(country__iexact=country).id
+    all_person = Person.objects.filter(place_birth_id=country_id)
+    all_person_serializer = PersonSerializer(all_person,many=True)
+    return Response(all_person_serializer.data)
 
 @api_view(['POST'])
 def create_new_person(request):
