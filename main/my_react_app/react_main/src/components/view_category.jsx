@@ -10,9 +10,6 @@ const ViewCategory = () => {
             .then(response => response.json())
             .then(data => setCategory(data))
     }, [])
-    function sort_services(e) {
-        if (let i of )
-    }
 
     return (
         <div>
